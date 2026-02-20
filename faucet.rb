@@ -5,21 +5,21 @@
 class Faucet < Formula
   desc "Turn any database into a secure REST API. One binary. One command."
   homepage "https://faucet.dev"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/faucetdb/faucet/releases/download/v0.1.1/faucet_0.1.1_darwin_amd64.tar.gz"
-      sha256 "c6f73e266a952d88422dad4fd33e748ed64a80c804d21aab6bcef2bf5d35d421"
+      url "https://github.com/faucetdb/faucet/releases/download/v0.1.2/faucet_0.1.2_darwin_amd64.tar.gz"
+      sha256 "75eca91166bca2a243933d169c99a2ee648dd991cd17a46bf1da4427f03f8834"
 
       def install
         bin.install "faucet"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/faucetdb/faucet/releases/download/v0.1.1/faucet_0.1.1_darwin_arm64.tar.gz"
-      sha256 "32b8b00c74f978c85ca066c9a546f8cd9982a1a951097f17c7eb899fa51a9d3c"
+      url "https://github.com/faucetdb/faucet/releases/download/v0.1.2/faucet_0.1.2_darwin_arm64.tar.gz"
+      sha256 "c5ef919ec1b07da5d5544247b1b86f02f0d7cf9d0ae3e6c816bda2f8eca90552"
 
       def install
         bin.install "faucet"
@@ -29,15 +29,15 @@ class Faucet < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/faucetdb/faucet/releases/download/v0.1.1/faucet_0.1.1_linux_amd64.tar.gz"
-      sha256 "4d33adfaade9cd54d40f50c956a9cc16c8f098d2e56cac80b06346bd5ae4891d"
+      url "https://github.com/faucetdb/faucet/releases/download/v0.1.2/faucet_0.1.2_linux_amd64.tar.gz"
+      sha256 "dec8a7dc99eae804be3ed6d81cc6a899eaa3fbabf3873c43b15cb94d9bd74068"
       def install
         bin.install "faucet"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/faucetdb/faucet/releases/download/v0.1.1/faucet_0.1.1_linux_arm64.tar.gz"
-      sha256 "3d0274a94efe907e00e6dc10845baf82a4d439bcddfcfa54d4dd3aff5227e61e"
+      url "https://github.com/faucetdb/faucet/releases/download/v0.1.2/faucet_0.1.2_linux_arm64.tar.gz"
+      sha256 "e5c9b14c4e9c5f010ae62ff073827f4a0c8126f3380b09a06a3c4f1a6c78d558"
       def install
         bin.install "faucet"
       end
