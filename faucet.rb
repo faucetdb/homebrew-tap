@@ -5,33 +5,43 @@
 class Faucet < Formula
   desc "Turn any database into a secure REST API. One binary. One command."
   homepage "https://faucet.dev"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
-    on_intel do
-      url "https://github.com/faucetdb/faucet/releases/download/v0.1.0/faucet_0.1.0_darwin_amd64.tar.gz"
-      sha256 "df8cb68404dcd72c6afe75a213b7fc8ec55e7d71fa0c08658e19f5b73905a558"
+    if Hardware::CPU.intel?
+      url "https://github.com/faucetdb/faucet/releases/download/v0.1.1/faucet_0.1.1_darwin_amd64.tar.gz"
+      sha256 "c6f73e266a952d88422dad4fd33e748ed64a80c804d21aab6bcef2bf5d35d421"
+
+      def install
+        bin.install "faucet"
+      end
     end
-    on_arm do
-      url "https://github.com/faucetdb/faucet/releases/download/v0.1.0/faucet_0.1.0_darwin_arm64.tar.gz"
-      sha256 "16e04a426810e651e1dbb739de7a2690bcfb1b3ce58037bf61f87a5f97df78cf"
+    if Hardware::CPU.arm?
+      url "https://github.com/faucetdb/faucet/releases/download/v0.1.1/faucet_0.1.1_darwin_arm64.tar.gz"
+      sha256 "32b8b00c74f978c85ca066c9a546f8cd9982a1a951097f17c7eb899fa51a9d3c"
+
+      def install
+        bin.install "faucet"
+      end
     end
   end
 
   on_linux do
-    on_intel do
-      url "https://github.com/faucetdb/faucet/releases/download/v0.1.0/faucet_0.1.0_linux_amd64.tar.gz"
-      sha256 "8e20502a3be8b1e384d5b8c77198481bfb66ef3deab38227354875aec04a1a5b"
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/faucetdb/faucet/releases/download/v0.1.1/faucet_0.1.1_linux_amd64.tar.gz"
+      sha256 "4d33adfaade9cd54d40f50c956a9cc16c8f098d2e56cac80b06346bd5ae4891d"
+      def install
+        bin.install "faucet"
+      end
     end
-    on_arm do
-      url "https://github.com/faucetdb/faucet/releases/download/v0.1.0/faucet_0.1.0_linux_arm64.tar.gz"
-      sha256 "a851016bbec9b10a61a81aa995c05ec13bea38b2a744bccfc869d01b7defb4b7"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/faucetdb/faucet/releases/download/v0.1.1/faucet_0.1.1_linux_arm64.tar.gz"
+      sha256 "3d0274a94efe907e00e6dc10845baf82a4d439bcddfcfa54d4dd3aff5227e61e"
+      def install
+        bin.install "faucet"
+      end
     end
-  end
-
-  def install
-    bin.install "faucet"
   end
 
   test do
