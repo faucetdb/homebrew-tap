@@ -5,21 +5,21 @@
 class Faucet < Formula
   desc "Turn any database into a secure REST API. One binary. One command."
   homepage "https://faucet.dev"
-  version "0.1.13"
+  version "0.1.14"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/faucetdb/faucet/releases/download/v0.1.13/faucet_0.1.13_darwin_amd64.tar.gz"
-      sha256 "4abc61f6f9a74a48732d2eabfc6bd66923b4542b74045741807074baf5c9a6ef"
+      url "https://github.com/faucetdb/faucet/releases/download/v0.1.14/faucet_0.1.14_darwin_amd64.tar.gz"
+      sha256 "79d2f480e1a9b1a1c8462b11c98441e7f3c9b7db5e86fca36bff3cc4e8258017"
 
       define_method(:install) do
         bin.install "faucet"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/faucetdb/faucet/releases/download/v0.1.13/faucet_0.1.13_darwin_arm64.tar.gz"
-      sha256 "a1a86f14b14c3a44be899a7f405983a479c9049190dad9974e55ba9b5241c4e2"
+      url "https://github.com/faucetdb/faucet/releases/download/v0.1.14/faucet_0.1.14_darwin_arm64.tar.gz"
+      sha256 "cb0966b3cccd7de9249cd83346d7608500f9b9275031bdb2fd6e2eefa068f022"
 
       define_method(:install) do
         bin.install "faucet"
@@ -29,15 +29,15 @@ class Faucet < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/faucetdb/faucet/releases/download/v0.1.13/faucet_0.1.13_linux_amd64.tar.gz"
-      sha256 "aee29defe8c09f978442d6a8c1929f7a28e8a5c6ec4f129e8859ab17530ebfb0"
+      url "https://github.com/faucetdb/faucet/releases/download/v0.1.14/faucet_0.1.14_linux_amd64.tar.gz"
+      sha256 "5a7a1b0a8eacdd671aef68afac3a49ef06b915a6b342bf43e8a897af0d1ed090"
       define_method(:install) do
         bin.install "faucet"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/faucetdb/faucet/releases/download/v0.1.13/faucet_0.1.13_linux_arm64.tar.gz"
-      sha256 "9995880214156722c1452ae3e4c420de9093ff8eff57c3f6cb697c8affe5ac57"
+      url "https://github.com/faucetdb/faucet/releases/download/v0.1.14/faucet_0.1.14_linux_arm64.tar.gz"
+      sha256 "601a79284d75dd3f8b2cee5522cb5a83270ddca502855a72a3ebc1cd7f64b901"
       define_method(:install) do
         bin.install "faucet"
       end
